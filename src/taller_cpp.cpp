@@ -9,20 +9,23 @@
 #include <iostream>
 using namespace std;
 
-// Incremento, Decremento y efectos laterales
+//Sizeof, coma, y operadores condicionales
 
-
-int add(int x, int y)
-{
-    return x + y;
-}
 
 int main() {
 
-	int x = 5;
-	int value = add(x, ++x); // es 5 + 6, o 6 + 6?
-	//Depende en que orden el compilador evalua los argumentos de la función
+	double d = 5.0;
+	cout << "El numero de bytes que ocupa es: "<<sizeof(d)<<endl;
+	// deberia imprimir el numero de bytes que ocupa en memoria
 
-	cout << value;
+
+	//operador coma
+
+	int x = 0;
+	int y = 2;
+	int z = (++x, ++y); // incrementa x e y
+
+	cout<<"El valor de z es "<<z<<endl;
+
 	return 0;
 }
