@@ -14,13 +14,15 @@ using namespace std;
 int main() {
 
 
-	int x { 4 }; // initialize x with the value of 4
-	x = 5; // change value of x to 5
+	cout << "Ingrese su edad: ";
+	int age;
+	cin >> age;
 
-	const double gravity { 9.8 }; // preferred use of const before type
-	int const sidesInSquare { 4 }; // okay, but not preferred
+	const int usersAge (age); // usersAge can not be changed
 
-	//gravity = 9.9; // not allowed, this will cause a compile error
+	//userAge++;
+
+	cout<<"Tienes: "<<usersAge<<endl;
 
 	return 0;
 }
