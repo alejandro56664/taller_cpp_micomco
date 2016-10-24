@@ -11,6 +11,16 @@ using namespace std;
 
 // Const, constexpr, and symbolic constants
 
+
+//Const is most useful (and most often used) with function parameters:
+void printInteger(const int myValue)
+{
+   cout << myValue;
+}
+
+// Pasar el parametro de una funcion como const permite asegurar a quien llama la funcion
+// que esta no cambiará el valor del parametro.
+
 int main() {
 
 
@@ -22,7 +32,8 @@ int main() {
 
 	//userAge++;
 
-	cout<<"Tienes: "<<usersAge<<endl;
-
+	cout<<"Tienes: ";
+	printInteger(usersAge);
+	cout<<endl;
 	return 0;
 }
