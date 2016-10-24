@@ -23,12 +23,14 @@ void printInteger(const int myValue)
 
 int main() {
 
+	constexpr double gravity (9.8); // ok, El valor puede ser resuelto en tiempo de comilación
+	constexpr int sum = 4 + 5; // ok, El valor puede ser resuelto en tiempo de comilación
 
 	cout << "Ingrese su edad: ";
 	int age;
 	cin >> age;
 
-	const int usersAge (age); // usersAge can not be changed
+	const int usersAge = age; // ??? El valor de 'age' no puede ser resuelto en tiempo de comilación
 
 	//userAge++;
 
