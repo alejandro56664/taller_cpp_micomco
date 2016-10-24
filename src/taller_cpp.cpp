@@ -9,33 +9,20 @@
 #include <iostream>
 using namespace std;
 
-// Const, constexpr, and symbolic constants
+// Incremento, Decremento y efectos laterales
 
 
-//Const is most useful (and most often used) with function parameters:
-void printInteger(const int myValue)
+int add(int x, int y)
 {
-   cout << myValue;
+    return x + y;
 }
-
-// Pasar el parametro de una funcion como const permite asegurar a quien llama la funcion
-// que esta no cambiará el valor del parametro.
 
 int main() {
 
-	constexpr double gravity (9.8); // ok, El valor puede ser resuelto en tiempo de comilación
-	constexpr int sum = 4 + 5; // ok, El valor puede ser resuelto en tiempo de comilación
+	int x = 5;
+	int value = add(x, ++x); // es 5 + 6, o 6 + 6?
+	//Depende en que orden el compilador evalua los argumentos de la función
 
-	cout << "Ingrese su edad: ";
-	int age;
-	cin >> age;
-
-	const int usersAge = age; // ??? El valor de 'age' no puede ser resuelto en tiempo de comilación
-
-	//userAge++;
-
-	cout<<"Tienes: ";
-	printInteger(usersAge);
-	cout<<endl;
+	cout << value;
 	return 0;
 }
